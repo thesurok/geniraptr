@@ -13,7 +13,7 @@ const MainTable = (props)=>(
                 />
             </thead> 
             <tbody>
-                {props.minuswordsCritType.length > 0 && props.minuswords[0] && props.minuswords[0].length > 0 && props.minuswords.map((minusword, i) => (
+                {props.minuswords.some(w=>w.length>0) && props.minuswords.map((minusword, i) => (
                     <MinusWordsRow
                         key={`minusword_${i}`}
                         campaignName={props.campaignName}

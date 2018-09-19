@@ -115,7 +115,7 @@ export default class MainInputData extends React.Component {
         }));
     }
     onMinuswordsChange = (e) => {
-        const minuswords = e.target.value.trim().toLowerCase().split(/,\s/);
+        const minuswords = e.target.value.trim().toLowerCase().split(/\r?\n/);
         this.setState(() => ({
             minuswords
         }));

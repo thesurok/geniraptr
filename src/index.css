@@ -86,13 +86,14 @@ textarea{
   resize: none;
   outline: none;
   overflow: auto;
-  background: radial-gradient(circle at center, #E1F8F1, rgba(177, 230, 214, 0.705)) ;
+  background: transparent;
   border: none;
   vertical-align: middle;
   height: 100%;
   width: 100%;
   box-sizing: border-box;
   padding: 2rem;
+  border-bottom: 0.6px solid rgba(66, 66, 68, 0.306);
 }
 
 p {
@@ -250,6 +251,11 @@ p {
   box-sizing: border-box;
 }
 
+.row1 textarea{
+  background: radial-gradient(circle at center, #E1F8F1, rgba(177, 230, 214, 0.705));
+  border: none;
+}
+
 .row2 {
   background:radial-gradient(circle at center, #FFE8C4, rgba(255, 232, 196, 0.65)) ;
   flex: 0.3;
@@ -270,8 +276,6 @@ p {
 }
 
 .row3 textarea {
-  background: transparent;
-  border-bottom: 0.6px solid rgba(66, 66, 68, 0.306);
   padding: 5px 20px 5px 5px; 
 }
 

@@ -10,7 +10,7 @@ const NoPlusAndMinusWords = ({onNoPlusChange, onMinuswordsChange, onLevelChange}
         </label>
         <label>
             Minuswords
-            <input type="text"
+            <textarea
                 onChange={onMinuswordsChange}
             />
         </label>
