@@ -205,7 +205,9 @@ export default class MainInputData extends React.Component {
             range.selectNodeContents(table);
             selection.addRange(range);
             document.execCommand('copy');
-            selection.removeAllRanges();  
+            selection.removeAllRanges();
+            document.querySelector('.copy-table').classList.add('copy-pressed');
+            setTimeout(()=>document.querySelector('.copy-table').classList.remove('copy-pressed'), 150);
         }    
     }
 

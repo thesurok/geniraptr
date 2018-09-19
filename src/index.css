@@ -208,7 +208,7 @@ p {
 .copy-table {
   display: inline-block;
   text-align: inherit;
-  margin-top: 2rem;
+  margin: 1rem 0;
 }
 
 .danger {
@@ -225,8 +225,17 @@ p {
 }
 
 .copy {
-  height: 6.2rem;
-  width: 6.2rem;
+  height: 4.5rem;
+  width: 4.5rem;
+}
+
+.copy-table{
+  transition: all 0.15s ease-in;
+}
+
+.copy-pressed{
+  transform: translate(2rem, -3rem) scale(0.8);
+  opacity: 0;
 }
 
 .icon:hover{
@@ -283,7 +292,7 @@ p {
   opacity: 0.6;
   font-weight: 200;
   text-align: center;
-  padding-top: 75%
+  line-height: 50rem;
 }
 
 ::-webkit-scrollbar{
