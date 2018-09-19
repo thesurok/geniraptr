@@ -1,8 +1,8 @@
 import React from 'react';
 import { IconContext } from "react-icons";
-import { FaTrashAlt, FaCopy, FaEraser } from 'react-icons/fa';
+import { FaTrashAlt, FaCopy, FaEraser, FaPlusCircle } from 'react-icons/fa';
 
-const AdForm = ({adFormData, onAdFormChange, handleClearAdForm, handleDeleteAdForm, handleCopyFromAdForm, index}) => (
+const AdForm = ({adFormData, onAdFormChange, handleClearAdForm, handleDeleteAdForm, handleCopyFromAdForm, index, handleAddAdForm}) => (
     <div className='adform-container'>
         <div className="adform">
             <div className="adform-wrapper">
@@ -25,7 +25,9 @@ const AdForm = ({adFormData, onAdFormChange, handleClearAdForm, handleDeleteAdFo
                     />
                 </label>
                 <span 
-                    className={adFormData.firstheadline.length > 30 ? 'counter danger' : 'counter'}
+                    className={(adFormData.firstheadline.match(/{|}/) && adFormData.firstheadline.length<40) ? 'counter' : 
+                    adFormData.firstheadline.length > 30 ? 'counter danger' : 
+                    'counter'}
                     >{adFormData.firstheadline.length}
                 </span>
             </div>
@@ -39,7 +41,9 @@ const AdForm = ({adFormData, onAdFormChange, handleClearAdForm, handleDeleteAdFo
                     />
                 </label>
                 <span 
-                    className={adFormData.secondheadline.length > 30 ? 'counter danger' : 'counter'}
+                    className={(adFormData.secondheadline.match(/{|}/) && adFormData.secondheadline.length<40) ? 'counter' : 
+                    adFormData.secondheadline.length > 30 ? 'counter danger' : 
+                    'counter'}
                     >
                 {adFormData.secondheadline.length}
                 </span>
@@ -54,7 +58,9 @@ const AdForm = ({adFormData, onAdFormChange, handleClearAdForm, handleDeleteAdFo
                     />
                 </label>
                 <span 
-                    className={adFormData.thirdheadline.length > 30 ? 'counter danger' : 'counter'}
+                    className={(adFormData.thirdheadline.match(/{|}/) && adFormData.thirdheadline.length<40) ? 'counter' : 
+                    adFormData.thirdheadline.length > 30 ? 'counter danger' : 
+                    'counter'}
                 >{adFormData.thirdheadline ? adFormData.thirdheadline.length : 0}
                 </span>
             </div>
@@ -137,33 +143,42 @@ const AdForm = ({adFormData, onAdFormChange, handleClearAdForm, handleDeleteAdFo
             </div>
             </div>
         </div>
+
         <div className="adform-btns">
-        	{index>0 &&
-        	    <span>
-        	        <button onClick={()=> handleDeleteAdForm(index)}>
-        	            <IconContext.Provider value={{ className: 'icon icon-delete'}}>
-        	                <div>
-        	                    <FaTrashAlt/>
-        	                </div>
-        	            </IconContext.Provider>
-        	        </button>
-        	        <button onClick={()=> handleCopyFromAdForm(index)}>
-        	            <IconContext.Provider value={{ className: 'icon'}}>
-        	                <div>
-        	                    <FaCopy/>
-        	                </div>
-        	            </IconContext.Provider>
-        	        </button>
-        	    </span>
-        	}
-        	<button onClick={()=> handleClearAdForm(index)}>
-        	    <IconContext.Provider value={{ className: 'icon' }}>
-        	        <div>
-        	            <FaEraser />
-        	        </div>
-        	    </IconContext.Provider>
-        	</button>
+            {index === 0 &&<button onClick={handleAddAdForm}>
+                <IconContext.Provider value={{ className: 'icon' }}>
+                    <div>
+                        <FaPlusCircle />
+                    </div>
+                </IconContext.Provider>
+            </button>}
+            {index > 0 &&
+                <span>
+                    <button onClick={() => handleDeleteAdForm(index)}>
+                        <IconContext.Provider value={{ className: 'icon icon-delete' }}>
+                            <div>
+                                <FaTrashAlt />
+                            </div>
+                        </IconContext.Provider>
+                    </button>
+                    <button onClick={() => handleCopyFromAdForm(index)}>
+                        <IconContext.Provider value={{ className: 'icon' }}>
+                            <div>
+                                <FaCopy />
+                            </div>
+                        </IconContext.Provider>
+                    </button>
+                </span>
+            }
+            <button onClick={() => handleClearAdForm(index)}>
+                <IconContext.Provider value={{ className: 'icon' }}>
+                    <div>
+                        <FaEraser />
+                    </div>
+                </IconContext.Provider>
+            </button>
         </div>
+            
     </div>
 );
 
