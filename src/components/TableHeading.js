@@ -9,8 +9,8 @@ const TableHeading = (props) => (
         <th>Headline 1</th>
         <th>Headline 2</th>
         {props.forms.some((form)=>form.thirdheadline) && <th>Headline 3</th>}
-        <th>Description</th>
-        {props.forms.some((form)=>form.seconddescription) &&<th>Description 2</th>}
+        <th>Description{props.forms.some(form=>form.seconddescription) && " Line 1"}</th>
+        {props.forms.some((form)=>form.seconddescription) &&<th>Description Line 2</th>}
         <th>Path 1</th>
         <th>Path 2</th>
         <th>Final URL</th>
