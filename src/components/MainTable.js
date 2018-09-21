@@ -34,7 +34,7 @@ const MainTable = (props)=>(
                 )
                 )}
             </tbody>                
-                {props.input.map((keywords) => ( keywords.length>0 &&
+                {props.input.map((keywords) => ( keywords.trim().length>0 &&
                     <Rows
                         key={keywords + Math.floor((Math.random() * 10000))}
                         keywords={keywords}
