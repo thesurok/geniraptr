@@ -13,6 +13,7 @@ const AdForms = (props) => (
                     handleDeleteAdForm={props.handleDeleteAdForm}
                     handleCopyFromAdForm={props.handleCopyFromAdForm}
                     handleAddAdForm={props.handleAddAdForm}
+                    handleWrapKeyword={props.handleWrapKeyword}
                 />
             )}
     </div>

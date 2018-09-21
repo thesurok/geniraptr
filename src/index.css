@@ -288,6 +288,22 @@ p {
   padding: 5px 20px 5px 5px; 
 }
 
+.wrap-as-kw {
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: #80CDB6;
+  letter-spacing: 0.2rem;
+  font-weight: bolder;
+  position: relative;
+  bottom:0.5px;
+  transition: opacity 0.2s ease-in;
+  margin-right: 0.5rem;
+}
+
+.wrap-as-kw:hover{
+  opacity: 0.6;
+}
+
 ::placeholder{
   opacity: 0.6;
   font-weight: 200;

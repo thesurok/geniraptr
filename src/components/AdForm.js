@@ -2,7 +2,8 @@ import React from 'react';
 import { IconContext } from "react-icons";
 import { FaTrashAlt, FaCopy, FaEraser, FaPlusCircle } from 'react-icons/fa';
 
-const AdForm = ({adFormData, onAdFormChange, handleClearAdForm, handleDeleteAdForm, handleCopyFromAdForm, index, handleAddAdForm}) => (
+const AdForm = ({adFormData, onAdFormChange, handleClearAdForm, 
+    handleDeleteAdForm, handleCopyFromAdForm, index, handleAddAdForm, handleWrapKeyword}) => (
     <div className='adform-container'>
         <div className="adform">
             <div className="adform-wrapper">
@@ -17,6 +18,10 @@ const AdForm = ({adFormData, onAdFormChange, handleClearAdForm, handleDeleteAdFo
             </div>
             <div className="adform-wrapper">
                 <label>
+                    <span 
+                        className="wrap-as-kw"
+                        onClick={()=>handleWrapKeyword(index)}
+                    >{'{'}Keyword: {'}'}</span>
                     Headline 1:
                     <input type="text"
                         value={adFormData.firstheadline} 
@@ -81,67 +86,71 @@ const AdForm = ({adFormData, onAdFormChange, handleClearAdForm, handleDeleteAdFo
                 >{adFormData.description.length}
                 </span>
             </div>
+
             <div className="adform-wrapper">
                 <label>
                     <div className="label">
                         Description 2:
                     </div>
                     <textarea
-                        rows='4' 
-                        value={adFormData.seconddescription} 
+                        rows='4'
+                        value={adFormData.seconddescription}
                         onChange={(e) => onAdFormChange(e, 'seconddescription', index)}
-            
+
                     />
                 </label>
-                <span 
+                <span
                     className={adFormData.seconddescription.length > 90 ? 'counter danger' : 'counter'}
                 >{adFormData.seconddescription ? adFormData.seconddescription.length : 0}
                 </span>
-                <div className="container">
-                <div className="adform-wrapper">
-                    <label>
-                        Path 1:
-                        <input type="text" 
-                            value={adFormData.firstpath} 
-                            onChange={(e) => onAdFormChange(e, 'firstpath', index)}
-                
-                        />
-                    </label>
-                    <span 
-                        className={adFormData.firstpath.length > 15 ? 'counter danger' : 'counter'}
-                    >{adFormData.firstpath.length}
-                    </span>
-                </div>
-                <div className="adform-wrapper">
-                    <label>
-                        Path 2:
-                        <input type="text" 
-                            value={adFormData.secondpath} 
-                            onChange={(e) => onAdFormChange(e, 'secondpath', index)}
-                
-                        />
-                    </label>
-                    <span 
-                        className={adFormData.secondpath.length > 15 ? 'counter danger' : 'counter'}
-                    >{adFormData.secondpath.length}
-                    </span>
-                </div>
             </div>
+
+                <div className="container">
+                    <div className="adform-wrapper">
+                        <label>
+                            Path 1:
+                        <input type="text"
+                                value={adFormData.firstpath}
+                                onChange={(e) => onAdFormChange(e, 'firstpath', index)}
+
+                            />
+                        </label>
+                        <span
+                            className={adFormData.firstpath.length > 15 ? 'counter danger' : 'counter'}
+                        >{adFormData.firstpath.length}
+                        </span>
+                    </div>
+                    <div className="adform-wrapper">
+                        <label>
+                            Path 2:
+                        <input type="text"
+                                value={adFormData.secondpath}
+                                onChange={(e) => onAdFormChange(e, 'secondpath', index)}
+
+                            />
+                        </label>
+                        <span
+                            className={adFormData.secondpath.length > 15 ? 'counter danger' : 'counter'}
+                        >{adFormData.secondpath.length}
+                        </span>
+                    </div>
+            </div>
+
             <div className="adform-wrapper">
                 <label>
                     Labels:
-                    <input type="text" 
-                        value={adFormData.label} 
+                        <input type="text"
+                        value={adFormData.label}
                         onChange={(e) => onAdFormChange(e, 'label', index)}
-            
+
                     />
                 </label>
-                <span 
+                <span
                     className={adFormData.label.length > 15 ? 'counter danger' : 'counter'}
                 >{adFormData.label.length}
                 </span>
             </div>
-            </div>
+
         </div>
 
         <div className="adform-btns">

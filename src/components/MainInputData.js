@@ -52,6 +52,7 @@ export default class MainInputData extends React.Component {
         this.handleClearAdForm = this.handleClearAdForm.bind(this);
         this.handleDeleteAdForm = this.handleDeleteAdForm.bind(this);
         this.handleCopyFromAdForm = this.handleCopyFromAdForm.bind(this);
+        this.handleWrapKeyword = this.handleWrapKeyword.bind(this);
     }
 
     anyTrueValues = (obj) => {
@@ -189,6 +190,15 @@ export default class MainInputData extends React.Component {
             }
         }));
     }
+    handleWrapKeyword = (i) => {
+        const forms = [...this.state.adForms.forms];
+        forms[i].firstheadline = (`{Keyword: ${forms[i].firstheadline}}`);
+        this.setState(()=>({
+            adForms: {
+                forms
+            }
+        }));
+    }
     onLevelChange = (e) => {
         const level = e.target.value
         this.setState(() => ({
@@ -254,6 +264,7 @@ export default class MainInputData extends React.Component {
                     handleCopyFromAdForm={this.handleCopyFromAdForm}
                     adForms={this.state.adForms}
                     onAdFormChange={this.onAdFormChange}
+                    handleWrapKeyword={this.handleWrapKeyword}
                 />
             </div>                 
                 {(this.anyTrueValues(this.state) || this.anyTrueValues(this.state.adForms.forms[0])) &&
