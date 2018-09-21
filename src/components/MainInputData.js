@@ -192,7 +192,7 @@ export default class MainInputData extends React.Component {
     }
     handleWrapKeyword = (i) => {
         const forms = [...this.state.adForms.forms];
-        forms[i].firstheadline = (`{Keyword: ${forms[i].firstheadline}}`);
+        forms[i].firstheadline = (`{Keyword:${forms[i].firstheadline}}`);
         this.setState(()=>({
             adForms: {
                 forms

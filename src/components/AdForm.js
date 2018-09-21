@@ -21,7 +21,7 @@ const AdForm = ({adFormData, onAdFormChange, handleClearAdForm,
                     <span 
                         className="wrap-as-kw"
                         onClick={()=>handleWrapKeyword(index)}
-                    >{'{'}Keyword: {'}'}</span>
+                    >{'{'}Keyword:{'}'}</span>
                     Headline 1:
                     <input type="text"
                         value={adFormData.firstheadline} 
