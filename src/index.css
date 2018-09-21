@@ -297,8 +297,9 @@ p {
   color: #80CDB6;
   letter-spacing: 0.2rem;
   font-weight: bolder;
-  position: relative;
-  bottom:0.5px;
+  position: absolute;
+  left: .5rem;
+  top: .5rem;
   transition: opacity 0.2s ease-in;
   margin-right: 0.5rem;
 }
