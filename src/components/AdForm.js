@@ -21,7 +21,7 @@ const AdForm = ({adFormData, onAdFormChange, handleClearAdForm,
                     <span 
                         className="wrap-as-kw"
                         onClick={()=>handleWrapKeyword(index)}
-                    >{'{'}Keyword:{'}'}</span>
+                    >{'{'}KeyWord:{'}'}</span>
                     Headline 1:
                     <input type="text"
                         value={adFormData.firstheadline} 
@@ -30,7 +30,7 @@ const AdForm = ({adFormData, onAdFormChange, handleClearAdForm,
                     />
                 </label>
                 <span 
-                    className={(adFormData.firstheadline.match(/{|}/) && adFormData.firstheadline.length<40) ? 'counter' : 
+                    className={(adFormData.firstheadline.match(/{|}/) && adFormData.firstheadline.length<=40) ? 'counter' : 
                     adFormData.firstheadline.length > 30 ? 'counter danger' : 
                     'counter'}
                     >{adFormData.firstheadline.length}
