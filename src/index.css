@@ -1,0 +1,329 @@
+*{
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 1.4rem;
+}
+
+button {
+  background-color:transparent;
+  border: 0;
+  text-decoration: none;
+  outline: none;
+  display: block;
+}
+
+input[type=text]{
+  outline: none;
+  border: none;
+  border-bottom: 0.6px solid rgba(66, 66, 68, 0.306);
+  display:block;
+  background-color: transparent;
+  margin:0 auto;
+  width: 100%;
+  position: relative;
+  padding: 0rem 2rem 0.5rem 0.5rem;
+  box-sizing: border-box;
+  line-height: 2rem;
+}
+
+input[type=checkbox]:checked + span>.custom-checkbox-inner_circle {
+  left: 30px;
+  background-color: #80CDB6;
+  border: none;
+}
+
+input[type=checkbox]:checked ~ span {
+  background-color: rgb(155, 147, 147);
+}
+
+input[type=radio]:checked +span>.custom-radio-inner_circle{
+  display:block;
+}
+
+input[type=radio]:checked +span{
+  background-color: rgb(155, 147, 147);
+}
+
+header {
+  background-color: #80CDB6;
+  min-height: 4rem;
+  width: 100%;
+}
+
+label {
+  letter-spacing: 0.1rem;
+  font-size: 1.6rem;
+  display:block;
+  padding: 2px;
+}
+
+table{
+  table-layout: fixed;
+  border-collapse: collapse;
+  width: 100%;
+  animation: fadein 0.8s ease-in-out;
+  background-color: #E1F8F1;
+}
+
+th {
+  padding: 1rem;
+  border-bottom: 2px inset rgba(80, 128, 113, 0.507);
+}
+
+td{
+  padding: 1rem 0;
+  word-wrap:break-word;
+  text-align: center;
+  border-bottom: 1px solid rgba(80, 128, 113, 0.507);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+textarea{
+  resize: none;
+  outline: none;
+  overflow: auto;
+  background: transparent;
+  border: none;
+  vertical-align: middle;
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 2rem;
+  border-bottom: 0.6px solid rgba(66, 66, 68, 0.306);
+}
+
+p {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.adform-container {
+  animation: fadein 0.5s ease-in-out;
+  display:inline-block;
+  margin: 1.4rem;
+}
+
+.adform {
+  display: inline-block;
+}
+
+.adform-btns {
+  display:inline-block;
+  vertical-align: top;
+}
+
+.adform-wrapper{
+  position: relative;
+}
+
+.brand-name{
+  color: hsl(162, 44%, 14%);
+  padding: 1rem;
+  line-height: 4rem;
+  font-size: 1.6rem;
+}
+
+.container {
+  display: flex;
+  text-align: center;
+  flex-wrap: nowrap;
+  justify-content: stretch
+}
+
+.counter {
+  position: absolute;
+  bottom: 0.5rem;
+  right: 1rem;
+  font-size: 1.1rem;
+  color: rgba(66, 66, 68, 0.306);
+}
+
+.checkbox-container, .radio-container{
+  position: relative;
+  display: block;
+  cursor:pointer;
+  margin-bottom: 0.2rem;
+}
+
+.checkbox-container input[type=checkbox] {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.custom-checkbox{
+  display: block;
+  height: 15px;
+  width: 45px;
+  background-color: rgba(155, 147, 147, 0.582);
+  position: relative;
+  border-radius: 2px;
+  box-sizing: border-box;
+}
+
+.custom-checkbox-inner_circle{
+  position: absolute;
+  left: -0.6px;
+  top: 0;
+  width: 15px;
+  height: 15px;
+  border-radius: 2px;
+  background-color: #F498AC;
+  box-sizing: border-box;
+  transition: left 0.1s ease-in, background-color 0.1s ease-out;
+}
+
+.custom-radio{
+  margin-left: 2px;
+  display:inline-block;
+  position: relative;
+  vertical-align: middle;
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  box-sizing: border-box;
+  background-color: rgba(155, 147, 147, 0.582);
+  transition: background-color 0.2s ease-in;
+}
+
+.custom-radio:hover{
+  background-color: rgb(189, 178, 178);
+}
+
+.custom-radio-inner_circle{
+  display: none;
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 9px;
+  height: 9px;
+  background-color: #80CDB6;
+  border-radius: 50%;
+}
+
+.copy-table {
+  display: inline-block;
+  text-align: inherit;
+  margin: 1rem 0;
+}
+
+.danger {
+  color: #F498AC;
+}
+
+.icon {
+  color: #80CDB6;
+  height: 2.8rem;
+  width: 2.8rem;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  padding: 0.2rem;
+}
+
+.copy {
+  height: 4.5rem;
+  width: 4.5rem;
+}
+
+.copy-table{
+  transition: all 0.15s ease-in;
+}
+
+.copy-pressed{
+  transform: translate(2rem, -3rem) scale(0.8);
+  opacity: 0;
+}
+
+.icon:hover{
+  transform: scale(1.1);
+  opacity: 0.76;
+}
+
+.radio-container input[type=radio] {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.row {
+  display: inline-block;
+  margin: 0.3rem;
+  box-sizing: border-box;
+}
+
+.row1 {
+  flex: 0 0 25rem;
+  box-sizing: border-box;
+}
+
+.row1 textarea{
+  background: radial-gradient(circle at center, #E1F8F1, rgba(177, 230, 214, 0.705));
+  border: none;
+}
+
+.row2 {
+  background:radial-gradient(circle at center, #FFE8C4, rgba(255, 232, 196, 0.65)) ;
+  flex: 0.3;
+  color:hsl(37, 20%, 20%);
+  box-sizing: border-box;
+}
+
+.row2 label {
+  padding-top: 2rem;
+}
+
+.row3 {
+  background:radial-gradient(circle at center, #FFF5E7, rgba(255, 245, 231, 0.753)) ;
+  flex: 1;
+  white-space: nowrap;
+  overflow-x: scroll;
+  color: 	hsl(35, 20%, 16%);
+}
+
+.row3 textarea {
+  padding: 5px 20px 5px 5px; 
+}
+
+.wrap-as-kw {
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: #80CDB6;
+  letter-spacing: 0.2rem;
+  font-weight: bolder;
+  position: absolute;
+  left: .5rem;
+  top: .5rem;
+  transition: opacity 0.2s ease-in;
+  margin-right: 0.5rem;
+}
+
+.wrap-as-kw:hover{
+  opacity: 0.6;
+}
+
+::placeholder{
+  opacity: 0.6;
+  font-weight: 200;
+  text-align: center;
+  line-height: 50rem;
+}
+
+::-webkit-scrollbar{
+  height: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #80CDB6;
+}
+
+@keyframes fadein {
+  from {opacity: 0;}
+  to {opacity: 1}
+}
