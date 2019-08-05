@@ -7,7 +7,8 @@ const MinusWordsRow = (props) => (
         <td name="Keyword">{props.minusword}</td>
         <td name="Criterion Type">{
             props.minusword[0] === '"' ? (props.minuswordsCritType === 'group-level' ? 'Negative Phrase' : 'Campaign Negative Phrase') :
-                (props.minuswordsCritType === 'group-level' ? 'Negative Broad' : 'Campaign Negative Broad')
+                props.minusword[0] === '[' ? (props.minuswordsCritType === 'group-level' ? 'Negative Exact' : 'Campaign Negative Exact') :
+                    (props.minuswordsCritType === 'group-level' ? 'Negative Broad' : 'Campaign Negative Broad')
         }</td>
         <td name="Headline 1"></td>
         <td name="Headline 2"></td>
