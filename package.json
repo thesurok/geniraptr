@@ -4,7 +4,7 @@
   "private": true,
   "homepage": "https://thesurok.github.io/geniraptr",
   "dependencies": {
-    "ajv": "^6.5.3",
+    "ajv": "^6.12.3",
     "ajv-keywords": "^3.2.0",
     "gh-pages": "^2.0.0",
     "normalize.css": "^8.0.0",
